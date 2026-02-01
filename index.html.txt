@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Proposal 💘</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+    font-weight: normal;
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: none;
+  }
+
+  #yes {
+    background: #ff4d6d;
+    color: white;
+  }
+
+  #no {
+    position: absolute;
+    background: white;
+  }
+</style>
+</head>
+<body>
+
+<h1>Hey Niveditta 💖</h1>
+<h2>Will you be my Valentine?</h2>
+
+<button id="yes">YES 💘</button>
+<button id="no">NO 🙈</button>
+
+<script>
+  const noBtn = document.getElementById("no");
+
+  noBtn.addEventListener("mouseover", moveNo);
+  noBtn.addEventListener("touchstart", moveNo);
+
+  function moveNo() {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+
+  document.getElementById("yes").onclick = () => {
+    document.body.innerHTML = `
+      <h1>I knew you’d say YES, Niveditta 😍💌</h1>
+      <p>Happy Valentine’s Day 💖</p>
+    `;
+  };
+</script>
+
+</body>
+</html>
